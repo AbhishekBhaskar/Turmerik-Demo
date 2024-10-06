@@ -1,0 +1,12 @@
+patientName,eligibleTrials
+John Doe,"[{""trialId"":""NCT04484727"",""trialName"":""Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs"",""eligibilityCriteriaMet"":{""age"":true}}]"
+Jane Smith,"[{""trialId"":""NCT04484727"",""trialName"":""Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs"",""eligibilityCriteriaMet"":{""ageRange"":true}}]"
+Michael Johnson,[]
+Emily Davis,[]
+William Wilson,"[{""trialId"":""NCT06597227"",""trialName"":""Proximal Gastrectomy Vs Total Gastrectomy in Locally Advanced Upper Gastric Cancer After Neoadjuvant Therapy"",""eligibilityCriteriaMet"":{""ageRange"":true}}]"
+Sarah Brown,"[{""trialId"":""NCT04995276"",""trialName"":""PostmenopausAL heaLth And DIseAse (PALLADIA) Study"",""eligibilityCriteriaMet"":{""ageRange"":true,""gender"":true,""conditions"":false,""medications"":false}}]"
+Robert Taylor,[]
+Laura Martinez,[]
+Christopher Lopez,"[{""trialId"":""NCT04484727"",""trialName"":""Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs"",""eligibilityCriteriaMet"":{""age"":true}}]"
+Maria Garcia,"[{""trialId"":""NCT04484727"",""trialName"":""Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs"",""eligibilityCriteriaMet"":""Patients above 18 years""}]"
+Daniel Hernandez,"[{""trialId"":""NCT04484727"",""trialName"":""Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs"",""eligibilityCriteriaMet"":{""age"":true}}]"

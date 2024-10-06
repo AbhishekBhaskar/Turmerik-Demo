@@ -1,11 +1,14 @@
 import { OpenAI } from "openai";
 import fetch from 'node-fetch';
 import * as fs from 'fs';
+// import * as csvjson from 'csvjson';
+import toCSV from 'csvjson';
+import * as jsonToCSV from 'json-2-csv';
 
 const openai = new OpenAI(
     {
         // Add your openai api key here
-        apiKey: ""
+        apiKey: "sk-4y5Hb3TByiJNa4BwT30sI0lbeH2nl1920sPLBvMSa2T3BlbkFJvORGT3__M-xB8Ox1Z3Yi-un0QqwS5DQdEknpqWyAsA"
     }
 );
 
@@ -248,5 +251,20 @@ consolidateData().then(async (data) => {
             console.error(err);
         }
     })
+
+
+    let csvData = jsonToCSV.json2csv(resData)
+
+    fs.writeFile('./EligibleTrials.csv', csvData, 'utf-8', (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+    })
+
+    
 })
+
+
+
 

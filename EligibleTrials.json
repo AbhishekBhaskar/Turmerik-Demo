@@ -1,20 +1,103 @@
 [
     {
-        "patientName": "Alice Smith",
+        "patientName": "John Doe",
         "eligibleTrials": [
             {
-                "trialId": "NCT04995276",
-                "trialName": "PostmenopausAL heaLth And DIseAse (PALLADIA) Study",
-                "eligibilityCriteriaMet": "Patient does not match the trial inclusion criteria as she is not a postmenopausal woman."
+                "trialId": "NCT04484727",
+                "trialName": "Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs",
+                "eligibilityCriteriaMet": {
+                    "age": true
+                }
             }
         ]
     },
     {
-        "patientName": "Bob Johnson",
+        "patientName": "Jane Smith",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT04484727",
+                "trialName": "Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs",
+                "eligibilityCriteriaMet": {
+                    "ageRange": true
+                }
+            }
+        ]
+    },
+    {
+        "patientName": "Michael Johnson",
         "eligibleTrials": []
     },
     {
-        "patientName": "Emily Brown",
+        "patientName": "Emily Davis",
         "eligibleTrials": []
+    },
+    {
+        "patientName": "William Wilson",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT06597227",
+                "trialName": "Proximal Gastrectomy Vs Total Gastrectomy in Locally Advanced Upper Gastric Cancer After Neoadjuvant Therapy",
+                "eligibilityCriteriaMet": {
+                    "ageRange": true
+                }
+            }
+        ]
+    },
+    {
+        "patientName": "Sarah Brown",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT04995276",
+                "trialName": "PostmenopausAL heaLth And DIseAse (PALLADIA) Study",
+                "eligibilityCriteriaMet": {
+                    "ageRange": true,
+                    "gender": true,
+                    "conditions": false,
+                    "medications": false
+                }
+            }
+        ]
+    },
+    {
+        "patientName": "Robert Taylor",
+        "eligibleTrials": []
+    },
+    {
+        "patientName": "Laura Martinez",
+        "eligibleTrials": []
+    },
+    {
+        "patientName": "Christopher Lopez",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT04484727",
+                "trialName": "Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs",
+                "eligibilityCriteriaMet": {
+                    "age": true
+                }
+            }
+        ]
+    },
+    {
+        "patientName": "Maria Garcia",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT04484727",
+                "trialName": "Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs",
+                "eligibilityCriteriaMet": "Patients above 18 years"
+            }
+        ]
+    },
+    {
+        "patientName": "Daniel Hernandez",
+        "eligibleTrials": [
+            {
+                "trialId": "NCT04484727",
+                "trialName": "Lung Barometric Measurements in Normal And in Respiratory Distressed Lungs",
+                "eligibilityCriteriaMet": {
+                    "age": true
+                }
+            }
+        ]
     }
 ]
