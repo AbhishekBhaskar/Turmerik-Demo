@@ -5,14 +5,17 @@ import * as fs from 'fs';
 const openai = new OpenAI(
     {
         // Add your openai api key here
-        apiKey: ""
+        apiKey: "sk-aCfTUx0a7j_UXgjNm4VIDvfpOzEzR1w-gPz2s0uerNT3BlbkFJhqhlY8b_286XwmbZRCFEg0-ujuINl8X8bwF7SdDYUA"
     }
 );
 
+// function to fetch clinical trial data
 async function fetchTrialData() {
     let iterCount = 0;
     let responseList = [];
     let nextPageToken = null;
+
+    // limiting to 10 iterations to cope with the model's token handling capacity
     while(iterCount <= 10) {
         try {
             let api = nextPageToken ? `https://clinicaltrials.gov/api/v2/studies?filter.overallStatus=RECRUITING&fields=EligibilityCriteria%7CNCTId%7CBriefTitle&countTotal=true&pageSize=30&pageToken=${nextPageToken}` :
@@ -31,18 +34,20 @@ async function fetchTrialData() {
     return responseList;
 }
 
+
+// function to fetch patient data
 async function fetchPatientData() {
     let patietDataList = [];
     const promise = new Promise((resolve, reject) => {
+
+        // read directory contents
         fs.readdir("./dataset/synthea_sample_data_fhir_latest", (err, files) => {
             if (err) {
                 console.error('Error reading directory:', err);
                 return;
             }
             
-            let jsonFileTest = fs.readFileSync(`./dataset/synthea_sample_data_fhir_latest/${files[0]}`);
-            let patientDataTest = JSON.parse(jsonFileTest);
-            let conditionsListTest = patientDataTest["entry"].filter((item) => (item["resource"]["resourceType"] == "Condition"));
+            // read patient data from dataset files
             files.forEach((file) => {
                 let jsonFile = fs.readFileSync(`./dataset/synthea_sample_data_fhir_latest/${file}`);
                 let patientData = JSON.parse(jsonFile);
@@ -67,6 +72,8 @@ async function fetchPatientData() {
     return res;
 }
 
+
+// function to summarize and extract relavent patient info using LLM model
 async function extractPatientFeatures(patientData) {
     let prompt = `You are a medical assistant. For each patient in the following json data, extract the following patient details from the text:
     - patient Id (Fetch entire uuid directly from the data)
@@ -98,6 +105,8 @@ async function extractPatientFeatures(patientData) {
     return openAiResponse;
 }
 
+
+// function to extract relavent clinical trial info using LLM model
 async function extractEligibilityFeatures(trialData) {
     let prompt = `You are a medical assistant. For each clinical trial in the following json data, extract the following clinical trial information from the text:
     - nctId
@@ -139,6 +148,7 @@ async function extractEligibilityFeatures(trialData) {
 
 }
 
+// function to match patient info to clinical trials based on eligibility criteria
 async function matchPatientToTrial(patientData, trialData) {
     let prompt = `You are a medical assistant. For the following patient, determine if he qualifies for the clinical trial based on the inclusion and exclusion criteria.
     
@@ -197,6 +207,7 @@ consolidateData().then(async (data) => {
             matchData[patient['name']] = {};
         }
 
+        // match clinical trial data to each patient
         for (let trial of trialData["clinicalTrials"]) {
             let matchAPIResponse = await matchPatientToTrial(patient, trial);
             matchData[patient['name']][trial['trialName']] = matchAPIResponse.choices[0].message.content;
@@ -225,6 +236,7 @@ consolidateData().then(async (data) => {
         })
     }
 
+    // write output to file
     fs.writeFile('./Output.json', JSON.stringify(matchData), err => {
         if (err) {
             console.error(err);

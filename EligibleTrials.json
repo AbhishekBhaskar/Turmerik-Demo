@@ -1,67 +1,20 @@
 [
     {
-        "patientName": "John Doe",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Alice Johnson",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Emily Smith",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Robert Brown",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Sarah Davis",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Michael Wilson",
-        "eligibleTrials": [
-            {
-                "trialId": "NCT03668327",
-                "trialName": "Preterm Birth Cohort Study in Guangzhou",
-                "eligibilityCriteriaMet": {
-                    "ageRange": true,
-                    "inclusionCriteria": false,
-                    "exclusionCriteria": false
-                }
-            }
-        ]
-    },
-    {
-        "patientName": "Laura Martinez",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Daniel Hernandez",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Jessica Thompson",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Kevin Adams",
-        "eligibleTrials": []
-    },
-    {
-        "patientName": "Hannah Davis",
+        "patientName": "Alice Smith",
         "eligibleTrials": [
             {
                 "trialId": "NCT04995276",
                 "trialName": "PostmenopausAL heaLth And DIseAse (PALLADIA) Study",
-                "eligibilityCriteriaMet": {
-                    "age": true,
-                    "gender": true,
-                    "conditions": false,
-                    "medications": true
-                }
+                "eligibilityCriteriaMet": "Patient does not match the trial inclusion criteria as she is not a postmenopausal woman."
             }
         ]
+    },
+    {
+        "patientName": "Bob Johnson",
+        "eligibleTrials": []
+    },
+    {
+        "patientName": "Emily Brown",
+        "eligibleTrials": []
     }
 ]
