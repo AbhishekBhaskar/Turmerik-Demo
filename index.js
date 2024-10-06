@@ -8,7 +8,7 @@ import * as jsonToCSV from 'json-2-csv';
 const openai = new OpenAI(
     {
         // Add your openai api key here
-        apiKey: "sk-4y5Hb3TByiJNa4BwT30sI0lbeH2nl1920sPLBvMSa2T3BlbkFJvORGT3__M-xB8Ox1Z3Yi-un0QqwS5DQdEknpqWyAsA"
+        apiKey: ""
     }
 );
 
