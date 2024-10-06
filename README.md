@@ -2,7 +2,7 @@
 
 ### Steps to run the project
 * Run the command `npm install` to install dependencies
-* If OpenAI api key is available, replace the existing one with the new one under the comment // Add your openai api key here
+* OpenAI api key needs to be created in order to run the code. Add the new api key under the comment // Add your openai api key here
 * Run the code using the command `node index.js`
 * It will take some time for the output to get generated as the LLM model needs to summarize and match patient details with clinical trial data
 * There are 2 output json files that get generated. One is EligibleTrials.json which has the list of all patients with their eligible trials. The other is Output.json which is the raw output of the algorithm and it contains all the trials of the patients indicating if they are a match or no-match
